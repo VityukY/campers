@@ -1,0 +1,15 @@
+.campersContainer{
+   padding: 0 64px;
+   display: flex;
+   gap: 64px;
+}
+.filterContainer{
+   width: 360px;
+   border: 1px solid red;
+
+}
+.listContainer{
+   width: 888px;
+   border: 1px solid red;
+
+}

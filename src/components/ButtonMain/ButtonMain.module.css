@@ -1,0 +1,43 @@
+.buttonMain {
+   width: 173px;
+   height: 56px;
+   padding: 16px 0;
+   gap: 10px;
+   border-radius: 200px;
+   opacity: 0px;
+   background-color: #E44848;
+   color: white;
+   cursor: pointer;
+}
+.buttonMain:hover {
+   background-color: #D84343;
+}
+.heroLink {
+   text-decoration: none;
+   color: inherit;
+   font-weight: normal;
+   background: none;
+   border: none;
+   padding: 0;
+   margin: 0;
+   outline: none;
+}
+
+.heroLink:hover,
+.heroLink:active,
+.heroLink:focus {
+   text-decoration: none;
+   color: inherit;
+   outline: none;
+}
+
+.buttonMain a.heroLink {
+   text-decoration: none;
+   color: inherit;
+   font-weight: normal;
+   background: none;
+   border: none;
+   padding: 0;
+   margin: 0;
+   outline: none;
+}
