@@ -1,0 +1,52 @@
+.cardImg{
+   width: 292px;
+   height: 320px;
+   object-fit:cover;
+   border-radius: 10px;
+}
+.cardContainer{
+   display: flex;
+   gap: 24px;
+   text-decoration: none;
+   color: black;
+}
+.titleContainer{
+   display: flex;
+   margin-bottom: 8px;
+   justify-content: space-between;
+}
+.locationContainer{
+   display: flex;
+   margin-bottom: 24px;
+   gap: 16px;
+}
+.description{
+   margin-bottom: 24px;
+}
+.tagList{
+      display: flex;
+      flex-wrap: wrap;
+
+}
+.name{
+      font-family: Inter;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 32px;
+
+}
+.price{
+
+      font-family: Inter;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 32px;
+
+}
+.moreBtn{
+   margin-top: auto;
+}
+.icon{
+   display:inline;
+   height: 48px;
+}
