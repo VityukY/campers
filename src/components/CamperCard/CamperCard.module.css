@@ -13,19 +13,35 @@
 .titleContainer{
    display: flex;
    margin-bottom: 8px;
-   justify-content: space-between;
+
+}
+.heartIcon{
+   margin-left: 16px;
+   align-self: center;
+   margin-right: 1px;
+}
+.starIcon{
+   align-self: center;
+   margin-right: 4px;
 }
 .locationContainer{
    display: flex;
    margin-bottom: 24px;
-   gap: 16px;
+}
+.mapIcon{
+   margin-left: 16px;
 }
 .description{
    margin-bottom: 24px;
 }
+.location{
+   margin-left: 4px;
+}
 .tagList{
       display: flex;
       flex-wrap: wrap;
+      gap: 8px;
+      padding-left: 0;
 
 }
 .name{
@@ -33,6 +49,7 @@
       font-size: 24px;
       font-weight: 600;
       line-height: 32px;
+      
 
 }
 .price{
@@ -41,12 +58,18 @@
       font-size: 24px;
       font-weight: 600;
       line-height: 32px;
+      margin-left: auto;
 
 }
-.moreBtn{
+
+.linkWrapper{
    margin-top: auto;
 }
-.icon{
-   display:inline;
-   height: 48px;
+
+.contentContainer {
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1;
+
 }
+
