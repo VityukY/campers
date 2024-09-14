@@ -1,19 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const filtersInitialState = {
-  equipment: {
-    ac: false,
-    automatic: false,
-    kitchen: false,
-    tv: false,
-    bathroon: false,
-  },
-  vehicle: {
-    van: false,
-    integration: false,
-    aicove: false,
-  },
-};
+const filtersInitialState = [];
 
 const filtersSlice = createSlice({
   name: "filters",

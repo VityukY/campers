@@ -1,0 +1,85 @@
+.cardImg {
+   width: 292px;
+   height: 320px;
+   object-fit: cover;
+   border-radius: 10px;
+}
+
+.cardContainer {
+   display: flex;
+   gap: 24px;
+   text-decoration: none;
+   color: black;
+}
+
+.titleContainer {
+   display: flex;
+   margin-bottom: 8px;
+
+}
+
+.heartIcon {
+   margin-left: 16px;
+   align-self: center;
+   margin-right: 1px;
+}
+
+.starIcon {
+   align-self: center;
+   margin-right: 4px;
+}
+
+.locationContainer {
+   display: flex;
+   margin-bottom: 24px;
+}
+
+.mapIcon {
+   margin-left: 16px;
+}
+
+.description {
+   margin-bottom: 24px;
+}
+
+.location {
+   margin-left: 4px;
+}
+
+.tagList {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+   padding-left: 0;
+
+}
+
+.name {
+   font-family: Inter;
+   font-size: 24px;
+   font-weight: 600;
+   line-height: 32px;
+
+
+}
+
+.price {
+
+   font-family: Inter;
+   font-size: 24px;
+   font-weight: 600;
+   line-height: 32px;
+   margin-left: auto;
+
+}
+
+.linkWrapper {
+   margin-top: auto;
+}
+
+.contentContainer {
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1;
+
+}
