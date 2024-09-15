@@ -1,5 +1,3 @@
-Here’s a basic README.md for your TravelTrucks project:
-
 markdown
 Copy code
 
