@@ -1,16 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const filtersInitialState = [];
+const filtersInitialState = {
+  filters: [],
+  location: "", // Додаємо поле для локації
+};
 
 const filtersSlice = createSlice({
   name: "filters",
   initialState: filtersInitialState,
   reducers: {
     setStatusFilter(state, action) {
-      state.status = action.payload;
+      state.filters = action.payload;
+    },
+    setLocation(state, action) {
+      state.location = action.payload;
     },
   },
 });
 
-export const { setStatusFilter } = filtersSlice.actions;
+export const { setStatusFilter, setLocation } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

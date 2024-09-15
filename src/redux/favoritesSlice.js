@@ -4,7 +4,7 @@ const initialState = {
   items: [],
 };
 
-const contactSlice = createSlice({
+const favoritesSlice = createSlice({
   name: "favorites",
   initialState,
   reducers: {
@@ -12,10 +12,10 @@ const contactSlice = createSlice({
       state.items.push(payload);
     },
     removeFavorites: (state, { payload }) => {
-      state.items = state.items.filter((item) => item.id !== payload); // Update state.items with the filtered array
+      state.items = state.items.filter((item) => item !== payload);
     },
   },
 });
 
-export const { addFavorites, removeFavorites } = contactSlice.actions;
-export const favoritesReducer = contactSlice.reducer;
+export const { addFavorites, removeFavorites } = favoritesSlice.actions;
+export const favoritesReducer = favoritesSlice.reducer;

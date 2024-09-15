@@ -1,5 +1,4 @@
-// src/components/Reviews/Reviews.jsx
-import { useCamper } from '../../redux/CamperContext'; // Імпортуємо хук
+import { useCamper } from '../../Context/CamperContext'; 
 import styles from './Reviews.module.css'
 export default function Reviews() {
   const camperDetails = useCamper(); // Отримуємо дані про кемпера

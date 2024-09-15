@@ -1,39 +1,31 @@
 import { createSelector } from "@reduxjs/toolkit";
 
-export const selectedCampers = (state) => state.campers.items;
-export const selectNameFilter = (state) => state.filters.filters;
+export const selectCampers = (state) => state.campers.items.items;
+export const selectFilter = (state) => state.filters.filters;
+export const selectLocation = (state) => state.filters.location;
+export const selectIsLoading = (state) => state.campers.isLoading;
 export const selectedIsLoading = (state) => state.campers.isLoading;
-export const selectedError = (state) => state.campers.error;
+export const selectError = (state) => state.campers.error;
+export const selectedFavorites = (state) => state.favorites.items;
 
 export const selectFilteredCampers = createSelector(
-  [selectedCampers, selectNameFilter],
-  (campers, filters) => {
-    // Перевірка, чи campers є масивом
-    if (!Array.isArray(campers.items)) {
-      console.error(
-        "Expected campers to be an array but received:",
-        campers.items
-      );
-      return []; // Повертає пустий масив, якщо campers не є масивом
-    }
+  [selectCampers, selectFilter, selectLocation],
+  (campers, filters, location) => {
+    if (!Array.isArray(campers)) return [];
+    if (!Array.isArray(filters)) return campers;
 
-    // Перевірка, чи filters є масивом
-    if (!Array.isArray(filters)) {
-      console.error("Expected filters to be an array but received:", filters);
-      return campers.items; // Повертає всі campers, якщо filters не є масивом
-    }
+    const normalizedLocation = location?.toLowerCase() || "";
 
-    // Якщо фільтри пусті, повертаємо всі кемпери
-    if (filters.length === 0) {
-      return campers.items;
-    }
+    const locationFilteredCampers = normalizedLocation
+      ? campers.filter(({ location: camperLocation }) =>
+          camperLocation.toLowerCase().includes(normalizedLocation)
+        )
+      : campers;
 
-    // Фільтрація кемперів за наявними фільтрами
-    return campers.items.filter((camper) => {
-      return filters.every((filter) => {
-        const [key, value] = Object.entries(filter)[0];
-        return camper[key] === value;
-      });
-    });
+    return locationFilteredCampers.filter((camper) =>
+      filters.every((filter) =>
+        Object.entries(filter).every(([key, value]) => camper[key] === value)
+      )
+    );
   }
 );

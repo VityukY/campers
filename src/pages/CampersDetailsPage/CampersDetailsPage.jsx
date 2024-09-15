@@ -5,7 +5,7 @@ import axios from "axios";
 import styles from './CampersDetailsPage.module.css'
 import sprite from '../../assets/sprite.svg'; 
 import BookingForm from "../../components/BookingForm/BookingForm";
-import { CamperProvider } from '../../redux/CamperContext';
+import { CamperProvider } from '../../Context/CamperContext';
 
 
 

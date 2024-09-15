@@ -1,5 +1,5 @@
 // src/components/Features/Features.jsx
-import { useCamper } from '../../redux/CamperContext'; // Імпортуємо хук
+import { useCamper } from '../../Context/CamperContext'; // Імпортуємо хук
 import FeaturesIcons from '../FeaturesIcons/FeaturesIcons';
 import styles from './Features.module.css'
 
