@@ -1,7 +1,7 @@
 import styles from './CamperCard.module.css'; 
 import ButtonMain from '../ButtonMain/ButtonMain';
 import { NavLink } from 'react-router-dom';
-import sprite from '../../assets/sprite.svg'; // Ensure this path is correct
+import sprite from '../../assets/sprite.svg'; 
 import FeaturesIcons from '../FeaturesIcons/FeaturesIcons';
 import { addFavorites, removeFavorites } from '../../redux/favoritesSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -46,16 +46,16 @@ export default function CamperCard({ item }) {
           <svg className={styles.mapIcon} width={16} height={16} >
             <use href={`${sprite}#icon-map`} /> 
           </svg>
-          <p className={styles.location}>{item.location}</p>
+          <p className={styles.location}>{item.location.split(', ').reverse().join(', ')}</p>
         </div>
         <p className={styles.description}>{item.description.slice(0, 53) + '...'}</p>
 
-         <FeaturesIcons item={item}/>
-      <div className={styles.linkWrapper}>
-        <NavLink to={`/campers/${item.id}/features`}>
-          <ButtonMain className={styles.moreBtn}>Show More</ButtonMain>
-        </NavLink>
-      </div>
+        <FeaturesIcons item={item}/>
+        <div className={styles.linkWrapper}>
+          <NavLink to={`/campers/${item.id}/features`}>
+            <ButtonMain className={styles.moreBtn}>Show More</ButtonMain>
+          </NavLink>
+        </div>
 
       </div>
     </div>

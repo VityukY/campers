@@ -1,13 +1,14 @@
-// src/components/Features/Features.jsx
-import { useCamper } from '../../Context/CamperContext'; // Імпортуємо хук
+
+import { useCamper } from '../../Context/CamperContext'; 
 import FeaturesIcons from '../FeaturesIcons/FeaturesIcons';
+import Loader from '../Loader/Loader';
 import styles from './Features.module.css'
 
 export default function Features() {
-  const camperDetails = useCamper(); // Отримуємо дані про кемпера
+  const camperDetails = useCamper();
 
   if (!camperDetails) {
-    return <p>Loading...</p>; // Якщо даних ще немає, показуємо повідомлення
+    <Loader/>
   }
 
   return (

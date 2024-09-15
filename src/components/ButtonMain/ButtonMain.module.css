@@ -8,6 +8,7 @@
    background-color: #E44848;
    color: white;
    cursor: pointer;
+   border: 0;
 }
 .buttonMain:hover {
    background-color: #D84343;

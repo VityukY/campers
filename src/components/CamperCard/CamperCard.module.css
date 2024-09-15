@@ -1,69 +1,71 @@
-.cardImg{
+.cardImg {
    width: 292px;
    height: 320px;
-   object-fit:cover;
+   object-fit: cover;
    border-radius: 10px;
 }
-.cardContainer{
+
+.cardContainer {
    display: flex;
    gap: 24px;
    text-decoration: none;
    color: black;
 }
-.titleContainer{
+
+.titleContainer {
    display: flex;
    margin-bottom: 8px;
-
 }
-.heartIcon{
-   margin-left: 16px;
+
+.heartIcon {
+   margin: 0 1px 0 16px;
    align-self: center;
-   margin-right: 1px;
    cursor: pointer;
 }
-.starIcon{
+
+.starIcon {
    align-self: center;
    margin-right: 4px;
 }
-.locationContainer{
+
+.locationContainer {
    display: flex;
    margin-bottom: 24px;
 }
-.mapIcon{
+
+.mapIcon {
    margin-left: 16px;
 }
-.description{
+
+.description {
    margin-bottom: 24px;
 }
-.location{
+
+.location {
    margin-left: 4px;
 }
-.tagList{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding-left: 0;
 
-}
-.name{
-      font-family: Inter;
-      font-size: 24px;
-      font-weight: 600;
-      line-height: 32px;
-      
-
-}
-.price{
-
-      font-family: Inter;
-      font-size: 24px;
-      font-weight: 600;
-      line-height: 32px;
-      margin-left: auto;
+.tagList {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+   padding: 0;
 
 }
 
-.linkWrapper{
+.name,
+.price {
+   font-family: Inter, sans-serif;
+   font-size: 24px;
+   font-weight: 600;
+   line-height: 32px;
+}
+
+.price {
+   margin-left: auto;
+}
+
+.linkWrapper {
    margin-top: auto;
 }
 
@@ -71,6 +73,4 @@
    display: flex;
    flex-direction: column;
    flex-grow: 1;
-
 }
-

@@ -29,8 +29,8 @@ export const vehicleTypeOptions = [
   { value: "form van", icon: "icon-bi_grid-1x2", label: "Van" },
   {
     value: "form fullyIntegrated",
-    icon: "icon-bi_grid-3x3-gap",
+    icon: "icon-bi_grid",
     label: "Fully Integrated",
   },
-  { value: "form alcove", icon: "icon-bi_grid", label: "Alcove" },
+  { value: "form alcove", icon: "icon-bi_grid-3x3-gap", label: "Alcove" },
 ];

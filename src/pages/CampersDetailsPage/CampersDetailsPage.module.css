@@ -1,5 +1,5 @@
 .camperName {
-      font-family: Inter;
+      font-family: Inter, sans-serif;
       font-size: 24px;
       font-weight: 600;
       line-height: 32px;
@@ -21,8 +21,7 @@
    margin-bottom: 24px;
 }
 .price {
-
-   font-family: Inter;
+   font-family: Inter, sans-serif;
    font-size: 24px;
    font-weight: 600;
    line-height: 32px;
@@ -68,11 +67,10 @@
 }
 .camperDescription{
    margin-bottom: 60px;
-
-      font-family: Inter;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
+   font-family: Inter, sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 24px;
 
 }
 .camperDetailsContainer{
@@ -83,15 +81,13 @@
    gap: 40px;
 }
 .camperDetailsContainer a{
-
-      font-family: Inter;
+      font-family: Inter, sans-serif;
       font-size: 20px;
       font-weight: 600;
       line-height: 24px;
       color: black;
       text-decoration: none;
    padding-bottom: 24px;
-   border-bottom: 5px solid #E44848;
 }
 .detailsContainer{
    border-bottom:1px solid #DADDE1;
@@ -102,4 +98,24 @@
    gap: 40px;
    padding-top: 44px;
    padding-bottom: 80px;
+}
+
+.subLinks {
+   display: flex;
+   gap: 40px;
+}
+
+.subLinks a {
+   font-family: Inter;
+   font-size: 20px;
+   font-weight: 600;
+   line-height: 24px;
+   color: black;
+   text-decoration: none;
+   padding-bottom: 24px;
+   transition: border-bottom 0.3s ease;
+}
+
+.activeLink {
+   border-bottom: 5px solid #E44848;
 }

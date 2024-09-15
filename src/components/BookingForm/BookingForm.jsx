@@ -3,12 +3,13 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './BookingForm.module.css'; // Ваші кастомні стилі
 import ButtonMain from '../ButtonMain/ButtonMain';
+import toast from 'react-hot-toast';
 
 export default function BookingForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    bookingDate: null, // змінили на null для DatePicker
+    bookingDate: null, 
     comment: '',
   });
 
@@ -29,9 +30,20 @@ export default function BookingForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form data submitted:', formData);
-    // Додайте вашу логіку для відправлення форми
+    const existingBookings = JSON.parse(localStorage.getItem('bookings')) || [];
+    const updatedBookings = [...existingBookings, formData];
+    localStorage.setItem('bookings', JSON.stringify(updatedBookings));
+    toast.success('Yor camper successfully booked')
+    setFormData({
+      name: '',
+      email: '',
+      bookingDate: null,
+      comment: '',
+    });
+
+    console.log('Form data submitted and saved to localStorage:', formData);
   };
+
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
@@ -58,15 +70,16 @@ export default function BookingForm() {
         className={styles.input}
       />
 
-      {/* Оновлений компонент для вибору дати */}
+
       <DatePicker
         selected={formData.bookingDate}
         onChange={handleDateChange}
+        minDate={new Date()} 
         dateFormat="dd/MM/yyyy"
         placeholderText="Booking date*"
         className={styles.input}
         required
-        calendarStartDay={1} // Початок тижня з понеділка
+        calendarStartDay={1}
       />
 
 

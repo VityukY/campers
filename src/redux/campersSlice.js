@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCampers, getCampersDetails } from "./campersOps";
+import { fetchCampers } from "./campersOps";
+import toast from "react-hot-toast";
 
 const handlePending = (state) => {
   state.isLoading = true;
@@ -8,6 +9,7 @@ const handlePending = (state) => {
 const handleRejected = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
+  toast.error("Error, please try again later");
 };
 
 const campersSlice = createSlice({
@@ -25,14 +27,7 @@ const campersSlice = createSlice({
         state.error = null;
         state.items = action.payload;
       })
-      .addCase(fetchCampers.rejected, handleRejected)
-      .addCase(getCampersDetails.pending, handlePending)
-      .addCase(getCampersDetails.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.items = action.payload;
-      })
-      .addCase(getCampersDetails.rejected, handleRejected);
+      .addCase(fetchCampers.rejected, handleRejected);
   },
 });
 

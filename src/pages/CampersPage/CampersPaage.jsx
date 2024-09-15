@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCampers } from "../../redux/campersOps";
 import { selectedIsLoading, selectFilter, selectFilteredCampers, selectLocation } from "../../redux/selectors";
-import { DNA } from "react-loader-spinner";
 import styles from './CampersPaage.module.css';
 import CamperCard from "../../components/CamperCard/CamperCard";
 import FilterOptions from "../../components/FilterOptions/FilterOptions"; // Ensure path is correct
@@ -10,6 +9,7 @@ import sprite from '../../assets/sprite.svg'; // Ensure this path is correct
 import ButtonMain from "../../components/ButtonMain/ButtonMain";
 import { setLocation, setStatusFilter } from "../../redux/filterSlice";
 import {stringToObject, objectToString , vehicleTypeOptions, equipmentOptions} from '../../utils/utils'
+import Loader from "../../components/Loader/Loader";
 
 
 export default function CampersPage() {
@@ -101,8 +101,8 @@ const isSelected = (optionValue) => selectedOptions.includes(optionValue);
       </div>
 
       <div className={styles.listContainer}>
-        {isLoading && <DNA />}
-        {!isLoading && filtredCampers?.length === 0 && <p>No campers available</p>}
+        {isLoading && <Loader/>}
+        {!isLoading && filtredCampers?.length === 0 && <h3 className={styles.noCampers}>No available camper</h3>}
         {!isLoading && filtredCampers?.length > 0 && (
           <ul>
             {filtredCampers.map(item => (

@@ -1,5 +1,5 @@
-import styles from './FilterOptions.module.css'; // Ensure the styles file exists
-import sprite from '../../assets/sprite.svg'; // Adjust the path if needed
+import styles from './FilterOptions.module.css';
+import sprite from '../../assets/sprite.svg'; 
 
 export default function FilterOptions ({ title, options, handleOptionClick, isSelected }) {
   return (

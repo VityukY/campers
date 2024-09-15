@@ -4,4 +4,17 @@ p{
 li {
   list-style: none;
 }
+body{
+  font-family: "Inter", sans-serif;
+}
+.loader {
+  align-self: center;
+}
 
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+
+}

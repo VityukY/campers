@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const filtersInitialState = {
   filters: [],
-  location: "", // Додаємо поле для локації
+  location: "",
 };
 
 const filtersSlice = createSlice({

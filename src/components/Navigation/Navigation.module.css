@@ -2,42 +2,36 @@
    display: flex;
    align-items: center;
    background-color: #f8f8f8;
-   /* Light grey background */
    padding: 24px 64px;
-   /* Spacing for the container */
+
 }
 
 .NavigationContainer p {
    font-size: 24px;
    font-weight: bold;
-   color: #0d0d0d;
-   /* Dark grey/black color for 'Travel' */
+   color: #0d0d0d;  
 }
 
 .NavigationContainer p span {
-   color: #00539f;
-   /* Dark blue color for 'Trucks' */
+   color: #00539f;  
 }
 
 nav {
-   margin-left: 450px;
-   
+   margin-left: 450px;   
    display: flex;
    gap: 32px;
-   /* Space between navigation links */
+  
 }
 
 nav a {
    text-decoration: none;
    font-size: 18px;
    font-weight: bold;
-   color: #0d0d0d;
-   /* Default black color for links */
+   color: #0d0d0d;   
 }
 
 nav a.active {
-   color: #d9534f;
-   /* Red color for the active link */
+   color: #d9534f; 
 }
 
 nav a:hover {
@@ -45,6 +39,5 @@ color: #d9534f;
 }
 
 .activeLink {
-   color: #d9534f;
-   /* Red color for the active link */
+   color: #d9534f;   
 }

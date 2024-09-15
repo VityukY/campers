@@ -1,8 +1,9 @@
 import './App.css'
 import { lazy, Suspense } from 'react'
-import {Discuss} from 'react-loader-spinner'
 import { Route, Routes } from 'react-router-dom'
 import Navigation from './components/Navigation/Navigation'
+import { Toaster } from 'react-hot-toast'
+import Loader from './components/Loader/Loader'
 
 function App() {
   const HomePage = lazy(()=> import('./pages/HomePage/HomePage'))
@@ -14,8 +15,9 @@ function App() {
 
   return (
     <>
+      <Toaster/>
       <Navigation/>
-      <Suspense fallback={<Discuss/>}>
+      <Suspense fallback={<Loader/>}>
         <Routes >
           <Route path="/" element={<HomePage />} />
           <Route path="/campers" element={<CampersPage/>} />

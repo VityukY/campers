@@ -1,8 +1,8 @@
-import storage from "redux-persist/lib/storage"; // Це localStorage
+import storage from "redux-persist/lib/storage";
 
 const persistConfig = {
-  key: "favoriteCampers", // Ключ для зберігання
-  storage, // Механізм зберігання
+  key: "favoriteCampers",
+  storage,
 };
 
 export default persistConfig;
