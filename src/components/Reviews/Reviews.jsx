@@ -37,7 +37,6 @@ export default function Reviews() {
             <h3 className={styles.nameLogo}>{review.reviewer_name.slice(0, 1)}</h3>
             <div>
               <p className={styles.reviewAuthor}>{review.reviewer_name}</p> 
-              <p>{review.reviewer_rating} stars</p>
               {renderStars(review.reviewer_rating)}
             </div>
             <p className={styles.reviewComment}>{review.comment}</p>

@@ -8,12 +8,12 @@
 
 .NavigationContainer p {
    font-size: 24px;
-   font-weight: bold;
+   font-weight: 800;
    color: #0d0d0d;  
 }
 
 .NavigationContainer p span {
-   color: #00539f;  
+   color: #475467;
 }
 
 nav {
@@ -27,7 +27,7 @@ nav a {
    text-decoration: none;
    font-size: 18px;
    font-weight: bold;
-   color: #0d0d0d;   
+   color:#101828;
 }
 
 nav a.active {

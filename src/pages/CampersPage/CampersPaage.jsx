@@ -10,6 +10,7 @@ import ButtonMain from "../../components/ButtonMain/ButtonMain";
 import { setLocation, setStatusFilter } from "../../redux/filterSlice";
 import {stringToObject, objectToString , vehicleTypeOptions, equipmentOptions} from '../../utils/utils'
 import Loader from "../../components/Loader/Loader";
+import { resetFilteredCampers } from "../../redux/campersSlice";
 
 
 export default function CampersPage() {
@@ -20,13 +21,22 @@ export default function CampersPage() {
   const isLoading = useSelector(selectedIsLoading);
   const locationFilter = useSelector(selectLocation)
   const dispatch = useDispatch();
-
+  const [visibleCampers, setVisibleCampers] = useState(4);
+  const campersToDisplay = filtredCampers.slice(0, visibleCampers);
+  const loadMoreCampers = () => {
+  setVisibleCampers(prevVisible => prevVisible + 4);
+};
   useEffect(() => {
     dispatch(fetchCampers());
     }, [dispatch]);
+  useEffect(() => {
+  setVisibleCampers(4);
+  }, [filtredCampers, filters]);
   
   const handleLocationUpdate = (newFilters) => {
     dispatch(setLocation(newFilters));
+    dispatch(resetFilteredCampers());
+
   };
 
   useEffect(() => {
@@ -38,6 +48,8 @@ export default function CampersPage() {
 
   const handleFilterUpdate = (newFilters) => {
     dispatch(setStatusFilter(newFilters));
+    dispatch(resetFilteredCampers());
+
   };
     const handleLocationChange = (event) => {
     updateLocation(event.target.value);
@@ -51,8 +63,9 @@ export default function CampersPage() {
     }
   }, [filters]);
   const filterHandler = () => {
-  const filterParams = selectedOptions.map(option => stringToObject(option));
-  handleFilterUpdate(filterParams)
+    const filterParams = selectedOptions.map(option => stringToObject(option));
+
+    handleFilterUpdate(filterParams)
   };
     
   const handleOptionClick = (optionValue) => {
@@ -71,6 +84,7 @@ const isSelected = (optionValue) => selectedOptions.includes(optionValue);
   return (
     <div className={styles.campersContainer}>
       <div className={styles.filterContainer}>
+        <p className={styles.locationLabel}>Location</p>
         <div className={styles.inputContainer}>
           <svg className={styles.iconWrapper} width={20} height={20}>
             <use href={`${sprite}#icon-map`} />
@@ -83,34 +97,44 @@ const isSelected = (optionValue) => selectedOptions.includes(optionValue);
             onChange={handleLocationChange}
           />
         </div>
-
         <p className={styles.fieldName}>Filters</p>
         <FilterOptions
           title="Vehicle equipment"
           options={equipmentOptions}
           handleOptionClick={handleOptionClick}
           isSelected={isSelected}
+          multiple='true'
         />
         <FilterOptions
           title="Vehicle type"
           options={vehicleTypeOptions}
           handleOptionClick={handleOptionClick}
           isSelected={isSelected}
+          multiple='false'
         />
-        <ButtonMain action ={filterHandler}>Search</ButtonMain>
+        <div className={styles.searchButton}>
+          <ButtonMain  action ={filterHandler}>Search</ButtonMain>
+        </div>
+        
       </div>
 
       <div className={styles.listContainer}>
         {isLoading && <Loader/>}
-        {!isLoading && filtredCampers?.length === 0 && <h3 className={styles.noCampers}>No available camper</h3>}
-        {!isLoading && filtredCampers?.length > 0 && (
-          <ul>
-            {filtredCampers.map(item => (
+        {!isLoading && campersToDisplay?.length === 0 && <h3 className={styles.noCampers}>No available camper</h3>}
+        {!isLoading && campersToDisplay?.length > 0 && (
+          <ul className={styles.listContainer}>
+            {campersToDisplay.map(item => (
               <li key={item.id} className={styles.camperCard}>
                 <CamperCard item={item} />
               </li>
             ))}
           </ul>
+          
+        )}
+        {!isLoading && filtredCampers.length > visibleCampers && (
+          <button className={styles.loadMoreButton} onClick={loadMoreCampers}>
+            Load More
+          </button>
         )}
       </div>
     </div>

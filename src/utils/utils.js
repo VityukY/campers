@@ -26,7 +26,7 @@ export const equipmentOptions = [
 ];
 
 export const vehicleTypeOptions = [
-  { value: "form van", icon: "icon-bi_grid-1x2", label: "Van" },
+  { value: "form panelTruck", icon: "icon-bi_grid-1x2", label: "Van" },
   {
     value: "form fullyIntegrated",
     icon: "icon-bi_grid",

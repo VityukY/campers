@@ -6,6 +6,14 @@ import { favoritesReducer } from "./favoritesSlice";
 import { campersReducer } from "./campersSlice";
 import { filtersReducer } from "./filterSlice";
 import persistConfig from "./persistConfig";
+import {
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
 
 const persistedFavoritesReducer = persistReducer(
   persistConfig,
@@ -18,6 +26,12 @@ export const store = configureStore({
     campers: campersReducer,
     filters: filtersReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
 export const persistor = persistStore(store);

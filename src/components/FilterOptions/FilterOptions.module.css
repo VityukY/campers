@@ -53,14 +53,15 @@
 .filterTitle {
    width: 100%;
    border-bottom: 1px solid #DADDE1;
-   font-family: Inter, sans-serif;
+   font-family: "Inter", sans-serif;
    font-size: 20px;
    font-weight: 600;
    line-height: 24px;
+      padding-bottom: 24px;
 }
 
 .fieldName {
-   font-family: Inter, sans-serif;
+   font-family: "Inter", sans-serif;
    font-size: 16px;
    font-weight: 500;
    line-height: 24px;
@@ -77,7 +78,7 @@
 
 .filterForm label {
    color: #10182899;
-   font-family: Inter, sans-serif;
+   font-family: "Inter", sans-serif;
    font-size: 16px;
    font-weight: 400;
    line-height: 24px;

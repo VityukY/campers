@@ -1,9 +1,10 @@
 import styles from './FilterOptions.module.css';
 import sprite from '../../assets/sprite.svg'; 
 
-export default function FilterOptions ({ title, options, handleOptionClick, isSelected }) {
+export default function FilterOptions({ title, options, handleOptionClick, isSelected }) {
+
   return (
-    <form className={styles.filterForm}>
+    <form  className={styles.filterForm}>
       <h3 className={styles.filterTitle}>{title}</h3>
       {options.map(({ value, icon, label }) => (
         <div

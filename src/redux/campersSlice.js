@@ -19,6 +19,11 @@ const campersSlice = createSlice({
     isLoading: false,
     error: null,
   },
+  reducers: {
+    resetFilteredCampers(state) {
+      state.filteredCampers = [];
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCampers.pending, handlePending)
@@ -32,3 +37,4 @@ const campersSlice = createSlice({
 });
 
 export const campersReducer = campersSlice.reducer;
+export const { resetFilteredCampers } = campersSlice.actions;

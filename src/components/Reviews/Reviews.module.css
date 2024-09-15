@@ -13,7 +13,7 @@
    align-items: center;
    color: #E44848;
    margin-right: 16px;
-   font-family: Inter, sans-serif;
+   font-family: "Inter", sans-serif;
    font-size: 24px;
    font-weight: 600;
    line-height: 32px;
@@ -22,7 +22,7 @@
 
 .reviewComment {
    color: #475467;
-   font-family: Inter, sans-serif;
+   font-family: "Inter", sans-serif;
   
    font-size: 16px;
    font-weight: 400;
@@ -37,7 +37,7 @@
 }
 
 .reviewAuthor {
-   font-family: Inter, sans-serif; 
+   font-family: "Inter", sans-serif; 
    font-size: 16px;  
    font-weight: 500;
    line-height: 24px;

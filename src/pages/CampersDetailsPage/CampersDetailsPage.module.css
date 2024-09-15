@@ -1,5 +1,5 @@
 .camperName {
-      font-family: Inter, sans-serif;
+      font-family: "Inter", sans-serif;
       font-size: 24px;
       font-weight: 600;
       line-height: 32px;
@@ -21,7 +21,7 @@
    margin-bottom: 24px;
 }
 .price {
-   font-family: Inter, sans-serif;
+   font-family: "Inter", sans-serif;
    font-size: 24px;
    font-weight: 600;
    line-height: 32px;
@@ -67,7 +67,7 @@
 }
 .camperDescription{
    margin-bottom: 60px;
-   font-family: Inter, sans-serif;
+   font-family: "Inter", sans-serif;
    font-size: 16px;
    font-weight: 400;
    line-height: 24px;
@@ -81,7 +81,7 @@
    gap: 40px;
 }
 .camperDetailsContainer a{
-      font-family: Inter, sans-serif;
+      font-family: "Inter", sans-serif;
       font-size: 20px;
       font-weight: 600;
       line-height: 24px;
