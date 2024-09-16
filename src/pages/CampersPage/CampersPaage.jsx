@@ -14,6 +14,7 @@ import { resetFilteredCampers } from "../../redux/campersSlice";
 
 
 export default function CampersPage() {
+  console.log('campers page render cheker');
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [location, updateLocation] = useState('');
   const filtredCampers = useSelector(selectFilteredCampers);
