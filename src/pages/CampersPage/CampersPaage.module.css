@@ -111,20 +111,7 @@
    margin-top: 40px;
 }
 
-.loadMoreButton {
-   width: 145px;
-   height: 56px;
-   padding: 16px 32px 16px 32px;
-   border: 1px solid #DADDE1;
-   align-self: center;
-   border-radius: 200px;
-   background-color: white;
-   margin-bottom: 52px;
-   cursor: pointer;
-}
-.loadMoreButton:hover{
-   border-color: #d84343;
-}
+
 
 .locationLabel{
 
@@ -135,4 +122,24 @@
       line-height: 24px;
       text-align: left;
       margin-bottom: 8px;
+}
+.loadMoreButton {
+   width: 145px;
+   height: 56px;
+   border: 1px solid #DADDE1;
+   align-self: center;
+   border-radius: 200px;
+   background-color: white;
+   margin-bottom: 52px;
+   cursor: pointer;
+   font-family: "Inter", sans-serif;
+   font-size: 16px;
+   font-weight: 500;
+   line-height: 24px;
+   letter-spacing: -0.005em;
+   text-align: center;
+}
+
+.loadMoreButton:hover {
+   border-color: #d84343;
 }
