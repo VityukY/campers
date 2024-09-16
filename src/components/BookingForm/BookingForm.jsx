@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import styles from './BookingForm.module.css'; // Ваші кастомні стилі
+import '../../utils//datepicker_manual.css'
+import styles from './BookingForm.module.css'; 
 import ButtonMain from '../ButtonMain/ButtonMain';
 import toast from 'react-hot-toast';
 
