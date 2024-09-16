@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import '../../utils//datepicker_manual.css'
+import '../../utils/datepicker_manual.css'
 import styles from './BookingForm.module.css'; 
 import ButtonMain from '../ButtonMain/ButtonMain';
 import toast from 'react-hot-toast';
@@ -41,8 +41,6 @@ export default function BookingForm() {
       bookingDate: null,
       comment: '',
     });
-
-    console.log('Form data submitted and saved to localStorage:', formData);
   };
 
 

@@ -1,5 +1,3 @@
-// redux/store.js
-
 import { configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import { favoritesReducer } from "./favoritesSlice";

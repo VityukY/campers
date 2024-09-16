@@ -4,8 +4,8 @@ import { fetchCampers } from "../../redux/campersOps";
 import { selectedIsLoading, selectFilter, selectFilteredCampers, selectLocation } from "../../redux/selectors";
 import styles from './CampersPaage.module.css';
 import CamperCard from "../../components/CamperCard/CamperCard";
-import FilterOptions from "../../components/FilterOptions/FilterOptions"; // Ensure path is correct
-import sprite from '../../assets/sprite.svg'; // Ensure this path is correct
+import FilterOptions from "../../components/FilterOptions/FilterOptions";
+import sprite from '../../assets/sprite.svg'; 
 import ButtonMain from "../../components/ButtonMain/ButtonMain";
 import { setLocation, setStatusFilter } from "../../redux/filterSlice";
 import {stringToObject, objectToString , vehicleTypeOptions, equipmentOptions} from '../../utils/utils'
@@ -14,7 +14,6 @@ import { resetFilteredCampers } from "../../redux/campersSlice";
 
 
 export default function CampersPage() {
-  console.log('campers page render cheker');
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [location, updateLocation] = useState('');
   const filtredCampers = useSelector(selectFilteredCampers);
